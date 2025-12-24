@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heli Patel - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <header class="sidebar">
+        <div class="profile-img"></div>
+        <h2>Heli Patel</h2>
+        <span class="handle">@helipatel12</span>
+        <div class="sidebar-social">
+            <a href="https://linkedin.com/in/helipatel12" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/helipatel12" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:helikp03@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#resume"><i class="fas fa-file-alt"></i> Resume</a></li>
+                <li><a href="#works"><i class="fas fa-briefcase"></i> Projects</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            &copy; 2025 Heli Patel<br>Vadodara, India
+        </div>
+    </header>
+
+    <main class="main-content">
+        
+        <section id="home">
+            <div class="hero-text">
+                <h1>Hi, I'm <span>Heli Patel</span></h1>
+                <p>I am a <span class="typing-text" id="typing"></span></p>
+                <div style="margin-top: 30px;">
+                   <a href="#contact" class="btn-submit" style="text-decoration: none;">Contact Me</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <p class="subtitle">Computer Science Undergraduate</p>
+            <p style="line-height: 1.8; color: #ccc; margin-bottom: 30px;">
+                I am a Computer Science undergraduate skilled in Data Science and Software Development, with experience building predictive models and reliable software solutions. I am passionate about combining analytical thinking and engineering to create meaningful, data-driven systems.
+            </p>
+
+            <h3 style="margin-bottom: 20px;">My Expertise</h3>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Data Science & ML</h3>
+                    <p>Building predictive models, ML pipelines, and optimization using Python, PyTorch, and TensorFlow.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>App Development</h3>
+                    <p>Optimizing Android applications using Android Studio, Java, ViewModel, and DataBinding.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Computer Vision</h3>
+                    <p>Developing detection systems (YOLO, OpenCV) for real-time surveillance and thermal streams.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Full Stack</h3>
+                    <p>Experience with React, Flask, FastAPI, and SQL for building end-to-end solutions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="resume">
+            <h2 class="section-title">Resume</h2>
+            <p class="subtitle">Experience & Education</p>
+            
+            <div class="timeline-container">
+                <div class="timeline-column">
+                    <h3>Experience</h3>
+                    <div class="timeline-item">
+                        <span class="timeline-date">Sep 2025 - Present</span>
+                        <h4>Application Developer Intern</h4>
+                        <span class="company">Dev Software and Services Pvt. Ltd. | Mumbai</span>
+                        <ul>
+                            <li>Building and optimizing Android apps using Java & Android Studio.</li>
+                            <li>Contributing to UI/UX, API integration, and testing.</li>
+                            <li>Tech: ViewModel, DataBinding, Koin.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">Jan 2025 - May 2025</span>
+                        <h4>Data Science & ML Intern</h4>
+                        <span class="company">Param Group of Companies | Vadodara</span>
+                        <ul>
+                            <li>Scraped e-commerce data and implemented ML price prediction pipelines.</li>
+                            <li>Optimized LLM prompts (20% relevance boost) & integrated vector DBs.</li>
+                            <li>Tech: Python, SQL, PyTorch, MLflow, DVC.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-column">
+                    <h3>Education</h3>
+                    <div class="timeline-item">
+                        <span class="timeline-date">June 2021 - May 2025</span>
+                        <h4>B.Tech in Computer Engineering</h4>
+                        <span class="company">Navrachana University | GPA: 3.9/4.0</span>
+                        <p>Mentor of Coding & Hackathon Club. Coursework: AI/ML, Cloud Computing, Cyber Security, Data Structures.</p>
+                    </div>
+                    <div class="timeline-item" style="border-left-color: #555;">
+                         <h4>Certifications</h4>
+                         <ul class="cert-list">
+                             <li>AWS Academy Machine Learning Foundations</li>
+                             <li>AWS Academy ML for Natural Language Processing</li>
+                             <li>Computer Vision Essentials (Great Learning)</li>
+                         </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-grid">
+                <div>
+                    <h3>Programming Languages</h3>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Python</span><span>95%</span></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 95%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Java</span><span>90%</span></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>SQL / MySQL</span><span>85%</span></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 85%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>C / C++</span><span>80%</span></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 80%;"></div></div>
+                    </div>
+                </div>
+                <div>
+                    <h3>Frameworks & Tools</h3>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>TensorFlow / PyTorch</span><span>85%</span></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 85%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Android Studio</span><span>90%</span></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>OpenCV / YOLO</span><span>85%</span></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 85%;"></div></div>
+                    </div>
+                     <div class="skill-item">
+                        <div class="skill-info"><span>React / Web</span><span>75%</span></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 75%;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="works">
+            <h2 class="section-title">Projects</h2>
+            <p class="subtitle">My Latest Work</p>
+
+            <div class="portfolio-filters">
+                <button class="filter-btn active" onclick="filterWorks('all')">All</button>
+                <button class="filter-btn" onclick="filterWorks('ml')">AI / ML</button>
+                <button class="filter-btn" onclick="filterWorks('app')">App Dev</button>
+                <button class="filter-btn" onclick="filterWorks('web')">Web</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item ml">
+                    <img src="https://via.placeholder.com/400x300?text=Wildlife+Detection" alt="Wildlife Detection">
+                    <div class="portfolio-overlay">
+                        <h4>Wildlife Detection</h4>
+                        <p>Real-time forest surveillance using YOLOv5s & Raspberry Pi. 95% accuracy.</p>
+                        <span style="color:var(--primary-color); font-size: 0.7rem; margin-top:5px;">Python, OpenCV, YOLO</span>
+                    </div>
+                </div>
+                <div class="portfolio-item app ml">
+                    <img src="https://via.placeholder.com/400x300?text=Crop+App" alt="Crop Recommendation">
+                    <div class="portfolio-overlay">
+                        <h4>Crop Recommendation App</h4>
+                        <p>Android app for soil/disease detection using TF Lite CNN.</p>
+                         <span style="color:var(--primary-color); font-size: 0.7rem; margin-top:5px;">Android, Firebase, ML</span>
+                    </div>
+                </div>
+                <div class="portfolio-item web ml">
+                    <img src="https://via.placeholder.com/400x300?text=Sentiment+Analysis" alt="Sentiment Analysis">
+                    <div class="portfolio-overlay">
+                        <h4>Sentiment Analysis Platform</h4>
+                        <p>NLP platform using NLTK & Scikit-learn with 90% accuracy.</p>
+                         <span style="color:var(--primary-color); font-size: 0.7rem; margin-top:5px;">Python, Flask, NLTK</span>
+                    </div>
+                </div>
+                <div class="portfolio-item app">
+                    <img src="https://via.placeholder.com/400x300?text=Music+Player" alt="Music Player">
+                    <div class="portfolio-overlay">
+                        <h4>Offline Music Player</h4>
+                        <p>Android music player with background playback and notification controls.</p>
+                         <span style="color:var(--primary-color); font-size: 0.7rem; margin-top:5px;">Android Studio, Java</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Contact</h2>
+            <p class="subtitle">Get in Touch</p>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <span>Vadodara, India</span>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <span>helikp03@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Call</h4>
+                            <span>+91 7043341420</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Your Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+                    </div>
+                    <button type="button" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
