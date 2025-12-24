@@ -66,3 +66,34 @@ navLinks.forEach(link => {
         }
     });
 });
+
+
+
+
+
+// Theme Toggle Logic
+const themeSwitch = document.getElementById('theme-switch');
+const currentTheme = localStorage.getItem('theme');
+
+// Set theme on initial load
+if (currentTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeSwitch.innerHTML = '<i class="fas fa-sun"></i>';
+} else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    themeSwitch.innerHTML = '<i class="fas fa-moon"></i>';
+}
+
+themeSwitch.addEventListener('click', () => {
+    let theme = document.documentElement.getAttribute('data-theme');
+    
+    if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        themeSwitch.innerHTML = '<i class="fas fa-moon"></i>';
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        themeSwitch.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+});

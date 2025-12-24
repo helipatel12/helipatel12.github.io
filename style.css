@@ -1,10 +1,52 @@
+/* Define Theme Colors */
 :root {
-    --primary-color: #00b4d8; /* Blue accent color */
+    /* Light Theme - Refined GitHub Emerald */
+    --primary-color: #30A14E;    /* Bold Green for accents */
+    --dark-bg: #F6F8FA;         /* Slightly cooler light gray for page bg */
+    --secondary-bg: #ffffff;    /* Pure white for Sidebar and Cards */
+    --text-color: #0E4545;      /* Very dark teal for readability */
+    --text-muted: #57606a;      /* Neutral gray-teal for descriptions */
+    --border-color: #d0d7de;    /* Subtle neutral border */
+    --accent-cyan: #25A0A7;     /* Secondary accent for links */
+    --sidebar-width: 260px;
+}
+
+[data-theme="dark"] {
+    /* Dark Theme */
+    --primary-color: #00b4d8;
     --dark-bg: #111;
     --secondary-bg: #222;
     --text-color: #fff;
     --text-muted: #aaa;
-    --sidebar-width: 260px;
+    --border-color: #333;
+    --accent-color: #00b4d8;
+}
+
+/* Update general styles to use the new border variable */
+.sidebar {
+    background-color: var(--secondary-bg);
+    border-right: 1px solid var(--border-color);
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    background-color: var(--border-color);
+}
+
+/* Theme Toggle Button Style */
+.theme-toggle {
+    background: var(--border-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-bottom: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
 }
 
 * {
