@@ -1,99 +1,97 @@
-// Typing Effect
-const text = ["Computer Science Undergraduate", "Data Scientist", "Software Developer"];
-let count = 0;
-let index = 0;
-let currentText = "";
-let letter = "";
+// TYPING EFFECT
+const words = ["Software Developer", "Data Scientist", "Computer Engineer"];
+let wordIndex = 0;
+let charIndex = 0;
+const typingElement = document.getElementById("typing");
 
-(function type() {
-    if (count === text.length) {
-        count = 0;
-    }
-    currentText = text[count];
-    letter = currentText.slice(0, ++index);
-    
-    const typingElement = document.getElementById("typing");
-    if (typingElement) {
-        typingElement.textContent = letter;
-    }
-    
-    if (letter.length === currentText.length) {
-        count++;
-        index = 0;
-        setTimeout(type, 2000); // Wait before typing next word
-    } else {
-        setTimeout(type, 100); // Typing speed
-    }
-}());
+const themeBtn = document.getElementById('theme-toggle-btn');
+const themeIcon = document.getElementById('theme-icon');
+const body = document.documentElement; // Targets <html> to apply data-theme
 
-// Mobile Menu Toggle
-function toggleMenu() {
-    document.querySelector('.sidebar').classList.toggle('active');
-}
+const filterBtns = document.querySelectorAll(".filter-btn");
+const projects = document.querySelectorAll(".project-card-v2");
 
-// Portfolio Filter
-function filterWorks(category) {
-    const items = document.querySelectorAll('.portfolio-item');
-    const buttons = document.querySelectorAll('.filter-btn');
 
-    // Update active button style
-    buttons.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
-
-    items.forEach(item => {
-        if (category === 'all') {
-            item.style.display = 'block';
-        } else {
-            if (item.classList.contains(category)) {
-                item.style.display = 'block';
-            } else {
-                item.style.display = 'none';
-            }
-        }
+filterBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    filterBtns.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    const filter = btn.dataset.filter;
+    projects.forEach(project => {
+      const category = project.dataset.category;
+      project.style.display =
+        filter === "all" || category.includes(filter)
+          ? "block"
+          : "none";
     });
-}
-
-// Simple logic to set active nav link on click
-const navLinks = document.querySelectorAll('.nav-menu a');
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-        
-        // Close sidebar on mobile after clicking
-        if (window.innerWidth <= 992) {
-            document.querySelector('.sidebar').classList.remove('active');
-        }
-    });
+  });
 });
 
+themeBtn.addEventListener('click', () => {
+    // Check current theme
+    const isDark = body.getAttribute('data-theme') === 'dark';
+    
+    if (isDark) {
+        body.removeAttribute('data-theme');
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+        localStorage.setItem('theme', 'light');
+    } else {
+        body.setAttribute('data-theme', 'dark');
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+        localStorage.setItem('theme', 'dark');
+    }
+});
 
+// Check for saved user preference on load
+window.onload = () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        body.setAttribute('data-theme', 'dark');
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+};
 
-
-
-// Theme Toggle Logic
-const themeSwitch = document.getElementById('theme-switch');
-const currentTheme = localStorage.getItem('theme');
-
-// Set theme on initial load
-if (currentTheme === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    themeSwitch.innerHTML = '<i class="fas fa-sun"></i>';
-} else {
-    document.documentElement.setAttribute('data-theme', 'light');
-    themeSwitch.innerHTML = '<i class="fas fa-moon"></i>';
+function type() {
+    if (charIndex < words[wordIndex].length) {
+        typingElement.textContent += words[wordIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 100);
+    } else {
+        setTimeout(erase, 2000);
+    }
 }
 
-themeSwitch.addEventListener('click', () => {
-    let theme = document.documentElement.getAttribute('data-theme');
-    
-    if (theme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-        themeSwitch.innerHTML = '<i class="fas fa-moon"></i>';
+function erase() {
+    if (charIndex > 0) {
+        typingElement.textContent = words[wordIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, 50);
     } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-        themeSwitch.innerHTML = '<i class="fas fa-sun"></i>';
+        wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(type, 500);
     }
+}
+
+document.addEventListener("DOMContentLoaded", type);
+
+
+/* PROJECT FILTER */
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll(".project-card");
+
+filterButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    filterButtons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filter = btn.dataset.filter;
+
+    projectCards.forEach(card => {
+      if (filter === "all" || card.classList.contains(filter)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
 });
