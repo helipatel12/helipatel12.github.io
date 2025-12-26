@@ -4,9 +4,7 @@ Welcome to my personal portfolio website!
 This website showcases my skills, projects, experience, and contact information in a clean and modern design.
 
 ## 🔗 Live Demo
-👉 https://your-username.github.io/
-
-> Replace `your-username` with your GitHub username.
+👉 https://helipatel12.github.io/
 
 ---
 
@@ -28,8 +26,6 @@ This portfolio highlights:
 - **Git & GitHub**
 - **Responsive Design**
 
-*(Add or remove technologies based on what you actually used)*
-
 ---
 
 ## 📂 Features
@@ -38,11 +34,3 @@ This portfolio highlights:
 - Projects showcase section 🧩
 - About & contact section 📬
 - Hosted using **GitHub Pages**
-
----
-
-## 🚀 Getting Started
-
-### 1️⃣ Clone the Repository
-```bash
-git clone https://github.com/your-username/your-repo-name.git
