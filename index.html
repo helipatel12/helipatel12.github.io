@@ -5,12 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Heli Patel – Full Stack Developer, Data Scientist, Computer Engineer Portfolio">
     <meta name="keywords" content="Heli Patel, Portfolio, Full Stack Developer, Data Science, Machine Learning">
+    <meta name="author" content="Heli Patel">
+
+    <!-- When someone shares your site, they see: -->
+    <meta property="og:title" content="Heli Patel - Portfolio">
+    <meta property="og:description" content="Full Stack Developer & Designer">
+    <meta property="og:url" content="https://helipatel12.github.io/">
 
     <title>Heli Patel</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Animated cursor -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
 </head>
 <body>
+    <!-- SVG Filter for gooey cursor effect -->
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="800">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -15" result="goo" />
+                <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+            </filter>
+        </defs>
+    </svg>
+
+    <div id="cursor" class="Cursor"></div>
 
     <div class="main-container">
         <section class="profile-card">
@@ -21,7 +45,9 @@
             <h1>Heli Patel</h1>
             <p class="title">Full Stack Developer</p>
             
-            <button class="resume-btn">Resume</button>
+            <a href="resume/Resume_Heli.pdf" target="_blank">
+                <button class="resume-btn">Resume</button>
+            </a>
             
             <hr class="separator">
 
@@ -45,10 +71,10 @@
             </div>
 
             <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#"><i class="fa-brands fa-github"></i></a>
-                <a href="#"><i class="fa-brands fa-figma"></i></a>
-                <a href="#"><i class="fa-brands fa-medium"></i></a>
+                <a href="https://www.linkedin.com/in/helipatel12/"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/helipatel12"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.figma.com/@helipatel12"><i class="fa-brands fa-figma"></i></a>
+                <a href="https://medium.com/@helipatel12"><i class="fa-brands fa-medium"></i></a>
             </div>
 
         </section>
@@ -258,11 +284,21 @@
                 <section id="contact">
                     <h2 class="section-title">Contact</h2>
                     <div class="contact-container">
-                        <form class="contact-form">
+                        <!-- <form class="contact-form">
                             <input type="text" class="form-control" placeholder="Your Name">
                             <input type="email" class="form-control" placeholder="Your Email">
                             <textarea class="form-control" rows="5" placeholder="Message"></textarea>
                             <button type="button" class="btn-submit">Send Message</button>
+                        </form> -->
+                        <form class="contact-form" id="contactForm">
+                            <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+                            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+
+                            <button type="submit" class="btn-submit">Send Message</button>
+
+                            <!-- Status message -->
+                            <p id="form-status" style="margin-top:15px; display:none;"></p>
                         </form>
                     </div>
                 </section>
@@ -275,6 +311,7 @@
         <i class="fa-solid fa-moon" id="theme-icon"></i>
     </button>
 
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script src="script.js"></script>
 
 </body>
